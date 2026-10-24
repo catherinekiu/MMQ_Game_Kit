@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MMQ! • Chair Arrangement</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app-shell">
+  <div class="mmq-topnav">
+    <a id="homeLink" class="mmq-home" href="../../START_HERE_EN_GB.html">← <span data-i18n="home">MMQ! Home</span></a>
+    <div class="lang-row">
+      <button id="langEn" class="mmq-mini-btn" type="button">English</button>
+      <button id="langZh" class="mmq-mini-btn" type="button">中文</button>
+    </div>
+  </div>
+
+  <header class="hero mmq-card">
+    <img class="hero-art" src="assets/mission_badge.png" alt="" aria-hidden="true">
+    <div class="title-block">
+      <span class="mmq-pill" data-i18n="stage">Cognitive Support</span>
+      <h1 data-i18n="title">Chair Arrangement</h1>
+      <p data-i18n="subtitle">Build multiplication arrays in a classroom.</p>
+    </div>
+    <div class="hud">
+      <div>⭐ <span data-i18n="stars">Stars</span> <strong id="starsCount">0</strong></div>
+      <div>🔥 <span data-i18n="streak">Streak</span> <strong id="streakCount">0</strong></div>
+    </div>
+  </header>
+
+  <nav class="mode-tabs">
+    <button id="learnTab" class="mode-tab" type="button"><span aria-hidden="true">🔎</span> <span data-i18n="learn">Learn</span></button>
+    <button id="practiceTab" class="mode-tab active" type="button"><span aria-hidden="true">🎯</span> <span data-i18n="practice">Mission Practice</span></button>
+  </nav>
+
+  <section id="learnPanel" class="panel mmq-card hidden">
+    <div class="learn-head">
+      <div>
+        <h2 data-i18n="learnTitle">Make a classroom array</h2>
+        <p class="help" data-i18n="learnHelp">Choose the number of rows and chairs in each row.</p>
+      </div>
+      <img class="learn-chair" src="assets/chair.png" alt="" aria-hidden="true">
+    </div>
+
+    <div class="controls">
+      <label><span data-i18n="rows">Rows</span><input id="rowsInput" type="number" min="1" max="10" value="3"></label>
+      <span class="times-sign">×</span>
+      <label><span data-i18n="cols">Chairs in each row</span><input id="colsInput" type="number" min="1" max="10" value="4"></label>
+      <button id="buildLearnBtn" class="mmq-btn" type="button"><span aria-hidden="true">🪑</span><span data-i18n="build">Arrange chairs</span></button>
+    </div>
+
+    <div id="learnStatement" class="statement" aria-live="polite"></div>
+    <div class="classroom learn-room">
+      <div id="learnGrid" class="chair-grid learn-grid" aria-label="Chair array"></div>
+    </div>
+  </section>
+
+  <section id="practicePanel" class="panel mmq-card">
+    <!-- Three-panel comic mission banner: left/right reference art + dynamic centre challenge -->
+    <section class="comic-mission comic-mission-v7" aria-labelledby="missionTitle">
+      <h2 id="missionTitle" class="sr-only" data-i18n="missionTitle">Get the Classroom Ready!</h2>
+      <div class="comic-strip-v7">
+        <div class="comic-panel-v7 comic-panel-left-v7" aria-hidden="true">
+          <img src="assets/comic_left_reference.png" alt="">
+        </div>
+
+        <div class="comic-panel-v7 comic-panel-centre-v7">
+          <div id="comicTaskBubble" class="comic-task-v7"></div>
+          <div class="comic-centre-scene-v7" aria-hidden="true">
+            <div id="comicChairGrid" class="comic-chair-grid-v7"></div>
+          </div>
+        </div>
+
+        <div class="comic-panel-v7 comic-panel-right-v7" aria-hidden="true">
+          <img src="assets/comic_right_reference.png" alt="">
+        </div>
+      </div>
+
+      <div class="comic-progress-row comic-progress-v7">
+        <strong id="missionProgressText"></strong>
+        <div id="missionProgress" class="mission-progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+          <span id="missionProgressFill"></span>
+        </div>
+        <div id="missionStars" class="mission-stars" aria-label="Mission stars"></div>
+      </div>
+    </section>
+
+    <div class="practice-head">
+      <div>
+        <h2 data-i18n="practiceTitle">Build the target array</h2>
+        <p class="help" data-i18n="tapHelp">Read the challenge, build the array, then count the chairs yourself.</p>
+      </div>
+      <label class="table-pick"><span data-i18n="table">Times table</span>
+        <select id="tableSelect"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select>
+      </label>
+    </div>
+
+    <div class="challenge-bar">
+      <div id="targetText" class="target"></div>
+      <div id="chairCount" class="counter"></div>
+    </div>
+
+    <div class="practice-layout">
+      <div class="classroom practice-room">
+        <div id="practiceGrid" class="chair-grid practice-grid" aria-label="Practice classroom grid"></div>
+      </div>
+
+      <aside class="side-card">
+        <img class="teacher-coach" src="assets/teacher_guide.png" alt="" aria-hidden="true">
+        <p id="coachText" class="coach"></p>
+
+        <div class="count-answer-card">
+          <label for="totalAnswer" data-i18n="totalQuestion">How many chairs altogether?</label>
+          <div class="count-answer-row">
+            <div class="answer-box">
+              <input id="totalAnswer" class="square-answer-input" type="number" inputmode="numeric" min="1" max="100" autocomplete="off" aria-describedby="chairCount" placeholder="?" aria-label="Type the total number of chairs">
+              <span class="answer-box-label" data-i18n="typeTotal">Type total</span>
+            </div>
+            <span data-i18n="chairsUnit">chairs</span>
+          </div>
+        </div>
+
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        <div class="side-actions">
+          <button id="checkBtn" class="mmq-btn green" type="button" data-i18n="check">Check array &amp; total</button>
+          <button id="clearBtn" class="mmq-btn secondary" type="button" data-i18n="clear">Clear chairs</button>
+          <button id="newBtn" class="mmq-btn purple" type="button" data-i18n="newQuestion">New challenge</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<!-- Appears after EVERY correct answer -->
+<div id="answerCelebration" class="answer-modal hidden" role="dialog" aria-modal="true" aria-labelledby="answerCelebrationTitle">
+  <div class="answer-modal-card">
+    <button id="closeAnswerCelebration" class="modal-close" type="button" aria-label="Close">×</button>
+    <img class="reward-star" src="assets/mission_badge.png" alt="" aria-hidden="true">
+    <h2 id="answerCelebrationTitle" data-i18n="greatJob">Great job!</h2>
+    <h3 data-i18n="classroomReady">Classroom Ready!</h3>
+    <p id="answerCelebrationText"></p>
+
+    <div class="popup-classroom">
+      <div class="popup-array-stage">
+        <div id="popupChairGrid" class="popup-chair-grid" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div id="answerEquation" class="answer-equation"></div>
+    <div class="modal-actions">
+      <button id="closePopupBtn" class="mmq-btn secondary" type="button" data-i18n="close">Close</button>
+      <button id="nextChallengeBtn" class="mmq-btn purple" type="button" data-i18n="nextChallenge">Next Challenge →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Final mission-complete screen after challenge 10 -->
+<div id="missionComplete" class="mission-modal hidden" role="dialog" aria-modal="true" aria-labelledby="missionCompleteTitle">
+  <div class="mission-modal-card">
+    <img class="finish-icon" src="assets/mission_badge.png" alt="" aria-hidden="true">
+    <span class="mission-kicker" data-i18n="missionCompleteKicker">MISSION COMPLETE</span>
+    <h2 id="missionCompleteTitle" data-i18n="missionCompleteTitle">The classroom is ready!</h2>
+    <p id="missionCompleteStats"></p>
+    <img class="finish-students" src="assets/student_group.png" alt="" aria-hidden="true">
+    <div class="modal-actions">
+      <button id="restartMissionBtn" class="mmq-btn green" type="button" data-i18n="restartMission">Prepare another classroom</button>
+      <a id="modalHomeLink" class="mmq-btn secondary" href="../../START_HERE_EN_GB.html" data-i18n="backHome">Back to MMQ! Home</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
