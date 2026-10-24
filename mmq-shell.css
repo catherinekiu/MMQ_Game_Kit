@@ -1,0 +1,66 @@
+:root{
+  --mmq-ink:#273553;
+  --mmq-muted:#65728d;
+  --mmq-navy:#28416f;
+  --mmq-blue:#4d83df;
+  --mmq-blue-dark:#3267c0;
+  --mmq-sky:#eaf5ff;
+  --mmq-teal:#4ab7a5;
+  --mmq-green:#48aa72;
+  --mmq-yellow:#ffd86b;
+  --mmq-orange:#ffad64;
+  --mmq-coral:#ff8678;
+  --mmq-purple:#8978d4;
+  --mmq-paper:#ffffff;
+  --mmq-line:#d9e4f2;
+  --mmq-shadow:0 16px 40px rgba(39,53,83,.13);
+  --mmq-radius:24px;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{
+  margin:0;
+  color:var(--mmq-ink);
+  font-family:"Trebuchet MS","Verdana","Arial Rounded MT Bold","Segoe UI","Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;
+  font-size:18px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased
+}
+button,input,select{font:inherit}
+button,a{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid rgba(77,131,223,.28);outline-offset:3px}
+.mmq-topnav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.mmq-home,.mmq-mini-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:50px;padding:11px 17px;border:2px solid var(--mmq-line);border-radius:16px;background:#fff;color:var(--mmq-navy);font-weight:900;font-size:1.02rem;text-decoration:none;box-shadow:0 7px 18px rgba(39,53,83,.08);cursor:pointer}
+.mmq-home:hover,.mmq-mini-btn:hover{transform:translateY(-1px);border-color:#b8cbe3}
+.mmq-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:58px;padding:13px 22px;border:0;border-radius:17px;background:var(--mmq-blue);color:#fff;font-weight:900;font-size:1.08rem;text-decoration:none;box-shadow:0 9px 0 rgba(50,103,192,.18),0 12px 25px rgba(39,53,83,.14);cursor:pointer;transition:transform .12s ease,filter .12s ease,box-shadow .12s ease}
+.mmq-btn:hover{filter:brightness(1.03);transform:translateY(-2px)}
+.mmq-btn:active{transform:translateY(2px);box-shadow:0 4px 0 rgba(50,103,192,.15),0 8px 18px rgba(39,53,83,.12)}
+.mmq-btn.secondary{background:#fff;color:var(--mmq-navy);border:2px solid var(--mmq-line);box-shadow:0 8px 18px rgba(39,53,83,.09)}
+.mmq-btn.green{background:var(--mmq-green)}
+.mmq-btn.orange{background:#ed8c3d}
+.mmq-btn.purple{background:var(--mmq-purple)}
+.mmq-btn.coral{background:#e9685a}
+.mmq-btn[disabled]{opacity:.48;cursor:not-allowed;transform:none;box-shadow:none}
+.mmq-card{background:rgba(255,255,255,.96);border:2px solid rgba(217,228,242,.95);border-radius:var(--mmq-radius);box-shadow:var(--mmq-shadow)}
+.mmq-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;background:var(--mmq-sky);color:#285c9e;font-weight:900;font-size:1rem}
+.mmq-muted{color:var(--mmq-muted)}
+.mmq-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+@media (max-width:760px){body{font-size:17px}.mmq-btn{font-size:1.02rem;min-height:54px}.mmq-home,.mmq-mini-btn{font-size:.98rem}}
+
+/* YEAR3_TYPOGRAPHY_START */
+:root{
+  --mmq-font-en:"Nunito","Trebuchet MS","Arial Rounded MT Bold","Segoe UI",Arial,sans-serif;
+  --mmq-font-zh:"Microsoft YaHei","PingFang SC","Noto Sans SC","Source Han Sans SC","Segoe UI",sans-serif;
+}
+body{font-family:var(--mmq-font-en);font-size:18px;line-height:1.5;font-weight:500}
+html[lang^="zh"] body{font-family:var(--mmq-font-zh);font-weight:500;line-height:1.65}
+h1,h2,h3,h4,strong,.mmq-btn,.mmq-home,.mmq-mini-btn,.mmq-pill{font-family:inherit}
+h1,h2,h3,h4{font-weight:800;letter-spacing:0}
+html[lang^="zh"] h1,html[lang^="zh"] h2,html[lang^="zh"] h3,html[lang^="zh"] h4{font-weight:700;letter-spacing:0}
+.mmq-home,.mmq-mini-btn{font-size:18px;font-weight:800;min-height:50px}
+.mmq-btn{font-size:19px;font-weight:800;min-height:56px;line-height:1.25}
+.mmq-pill{font-size:16px;font-weight:800;line-height:1.25}
+button,input,select{font-family:inherit}
+@media(max-width:760px){body{font-size:17px}.mmq-btn{font-size:18px;min-height:54px}.mmq-home,.mmq-mini-btn{font-size:17px}}
+/* YEAR3_TYPOGRAPHY_END */
