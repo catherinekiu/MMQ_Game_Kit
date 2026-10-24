@@ -1,0 +1,47 @@
+MMQ! Year 3 Game Kit — QA Report (Refinement v2)
+
+RESULT: PASS for static/code-level QA.
+
+Checks completed
+1. JavaScript syntax
+   - All .js files checked with Node.js --check: PASS
+
+2. Shared mathematics logic
+   - tests/logic-tests.js: PASS
+
+3. Local references
+   - HTML src/href references: PASS
+   - CSS url(...) references: PASS
+   - Missing local references found: 0
+
+4. Popubbles DOM integrity
+   - JavaScript $() ID references matched to index.html IDs: PASS
+   - Duplicate HTML IDs: 0
+
+5. Popubbles motion logic
+   - requestAnimationFrame upward movement present: PASS
+   - Slow rise speed: 44 px/s
+   - Medium rise speed: 68 px/s
+   - Fast rise speed: 98 px/s
+   - Verified Slow < Medium < Fast: PASS
+   - Bubble wrap/recycle logic present: PASS
+   - Off-screen bubble is not automatically recorded as an incorrect mathematical response: PASS by code inspection
+
+6. Popubbles answer logic
+   - First-response lock retained: PASS
+   - Purposeful multiplication distractors retained via MMQMath.multiplicationDistractors(): PASS
+   - Correct feedback/burst and wrong-answer correct-reveal logic retained: PASS
+
+7. Catch Me
+   - JavaScript syntax: PASS
+   - Local references: PASS
+   - Refined 3-lane mechanism retained.
+
+Browser automation note
+- Chromium is installed in the execution environment, but the sandbox headless Chromium process does not complete and times out because of environment/DBus limitations. Therefore no automated rendered screenshot/browser interaction is claimed in this report.
+
+Recommended user smoke test after opening START_HERE.html
+- Popubbles: run Slow, Medium and Fast for at least one item each and visually confirm increasing rise speed.
+- Popubbles: let a bubble leave the top and verify it returns from the bottom without increasing Attempts.
+- Popubbles: tap one correct and one wrong answer and verify feedback.
+- Catch Me: confirm left/right controls and lane tapping remain functional.

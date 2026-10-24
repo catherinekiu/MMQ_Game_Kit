@@ -1,0 +1,19 @@
+MMQ! GITHUB UPLOAD
+
+1. Extract this ZIP.
+2. Open the folder: MMQ-Multiplication-Quest
+3. Create a new GitHub repository.
+4. Upload the CONTENTS of this folder to the repository.
+   Do not upload this ZIP as the website itself.
+5. Commit the files.
+6. Go to Settings > Pages.
+7. Under Build and deployment choose:
+      Source: Deploy from a branch
+      Branch: main
+      Folder: / (root)
+8. Save.
+9. Open the GitHub Pages URL shown by GitHub.
+
+IMPORTANT:
+- index.html must remain in the repository root.
+- Keep the folders games, media, shared and tests in the same structure.

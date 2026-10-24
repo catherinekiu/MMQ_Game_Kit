@@ -1,0 +1,8 @@
+UPLOAD BATCH 1 FIRST
+
+1. Open this extracted folder.
+2. Select ALL contents inside it.
+3. Drag them into your GitHub repository upload page.
+4. Commit changes.
+5. Then upload Batch 2.
+Do NOT upload this ZIP file itself.

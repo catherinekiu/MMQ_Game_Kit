@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MMQ! • Catch Me!</title>
+<link rel="stylesheet" href="../../shared/mmq-shell.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app-shell">
+  <div class="mmq-topnav">
+    <a id="homeLink" class="mmq-home" href="../../START_HERE_EN_GB.html"><span class="home-icon" aria-hidden="true">🏠</span> <span data-i18n="home">MMQ! Home</span></a>
+    <div class="lang-row">
+      <button id="langEn" class="mmq-mini-btn lang-btn" type="button" title="English">EN</button>
+      <button id="langZh" class="mmq-mini-btn lang-btn" type="button" title="Chinese">CN</button>
+    </div>
+  </div>
+
+  <section id="menuScreen" class="screen active">
+    <header class="hero mmq-card">
+      <img class="hero-mascot" src="assets/apple_mascot.png" alt="" aria-hidden="true">
+      <div>
+        <span id="slotPill" class="mmq-pill">Practice</span>
+        <h1>Catch Me!</h1>
+        <p data-i18n="subtitle">Move the basket to catch the correct multiplication answer.</p>
+      </div>
+    </header>
+
+    <div class="setup-grid">
+      <section class="setup-card mmq-card">
+        <h2 data-i18n="how">How to play</h2>
+        <div class="steps">
+          <div><span>1</span><p data-i18n="step1">Choose ONE game type: one times table OR Mixed ×3.</p></div>
+          <div><span>2</span><p data-i18n="step2">Read the multiplication fact.</p></div>
+          <div><span>3</span><p data-i18n="step3">Move the basket under the correct apple.</p></div>
+        </div>
+      </section>
+
+      <section class="setup-card mmq-card">
+        <h2 data-i18n="playMode">Play mode</h2>
+        <div class="choice-row">
+          <button class="choice-chip" data-time="untimed" type="button"><span aria-hidden="true">🌤️</span> <span data-i18n="untimed">Untimed</span></button>
+          <button class="choice-chip" data-time="timed" type="button"><img class="chip-icon" src="assets/timer.png" alt=""> <span data-i18n="timed">Timed • 60 s</span></button>
+        </div>
+        <p id="timeNote" class="note"></p>
+        <h3 data-i18n="fallSpeed">Apple speed</h3>
+        <div class="choice-row">
+          <button class="choice-chip speed-chip" data-speed="slow" type="button">🐢 <span data-i18n="slow">Slow</span></button>
+          <button class="choice-chip speed-chip" data-speed="medium" type="button">🐇 <span data-i18n="medium">Medium</span></button>
+          <button class="choice-chip speed-chip" data-speed="fast" type="button">⚡ <span data-i18n="fast">Fast</span></button>
+        </div>
+      </section>
+    </div>
+
+    <section class="table-card mmq-card">
+      <h2 data-i18n="chooseTable">Choose a times table</h2>
+      <p class="selection-hint" data-i18n="selectionHint">Choose either ONE table below, or choose THREE tables in Mixed ×3. Selecting one type clears the other.</p>
+      <div id="tableButtons" class="table-grid"></div>
+
+      <div id="mixedBox" class="mixed-box">
+        <div class="mixed-head">
+          <div>
+            <h3 data-i18n="mixed">Mixed ×3</h3>
+            <p data-i18n="mixedHelp">Choose exactly three times tables.</p>
+          </div>
+          <span id="mixedCount" class="mixed-count">0/3</span>
+        </div>
+        <div id="mixedButtons" class="table-grid mini"></div>
+        <div id="mixedStatus" class="mode-note" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="launch-panel">
+      <div class="launch-art" aria-hidden="true">
+        <img src="assets/apple_mascot.png" alt="">
+        <span class="launch-arrow">→</span>
+        <img src="assets/basket_mascot.png" alt="">
+      </div>
+      <div class="launch-copy">
+        <span class="launch-kicker" data-i18n="readyKicker">READY TO CATCH?</span>
+        <h3 data-i18n="readyTitle">Your game is set.</h3>
+        <p id="selectionSummary">×2 • Untimed practice • Medium speed</p>
+      </div>
+      <button id="setupStartBtn" class="setup-start-btn" type="button">
+        <span class="start-shine" aria-hidden="true"></span>
+        <img src="assets/finish.png" alt="">
+        <span data-i18n="start">START</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="gameScreen" class="screen">
+    <div class="game-hud mmq-card">
+      <div class="question-wrap">
+        <span id="questionLabel" data-i18n="question">Question</span>
+        <strong id="questionText">Adjust screen</strong>
+      </div>
+
+      <div class="stats">
+        <div class="hud-card hud-mini"><img src="assets/attempts.png" alt=""><span data-i18n="attempts">Attempts</span><strong id="attempts">0</strong></div>
+        <div class="hud-card hud-mini"><img src="assets/correct.png" alt=""><span data-i18n="correct">Correct</span><strong id="correct">0</strong></div>
+        <div class="hud-card hud-feature hud-score"><img src="assets/reward_star.png" alt=""><span data-i18n="score">Score</span><strong id="score">0</strong></div>
+        <div class="hud-card hud-feature hud-time"><img src="assets/timer.png" alt=""><span id="timeLabel">Timer paused</span><strong id="timer">--</strong></div>
+      </div>
+
+      <button id="endBtn" class="end-btn" type="button" disabled><img src="assets/finish.png" alt=""><span data-i18n="end">End game</span></button>
+    </div>
+
+    <div id="progressTrack" class="progress-track"><div id="progressBar"></div></div>
+
+    <section class="play-card mmq-card">
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+      <div id="catchField" class="catch-field" aria-label="Catch Me game area">
+        <div class="lane lane-0" data-lane="0"></div>
+        <div class="lane lane-1" data-lane="1"></div>
+        <div class="lane lane-2" data-lane="2"></div>
+        <div class="catch-line" aria-hidden="true"></div>
+        <div id="speedBoostBadge" class="speed-boost-badge" aria-live="polite">⚡ <span data-i18n="fastDrop">FAST DROP!</span></div>
+        <img id="basket" class="basket lane-pos-1" src="assets/basket_mascot.png" alt="Basket">
+        <div id="feedbackOverlay" class="feedback-overlay hidden">
+          <img id="feedbackImage" src="assets/correct.png" alt="">
+          <strong id="feedbackText"></strong>
+        </div>
+      </div>
+
+      <p class="touch-help" data-i18n="touchHelp">Move the basket with your mouse, click/tap a lane, use ← →, and hold SPACE to make the apples fall faster.</p>
+      <div class="touch-controls" aria-label="Touch controls">
+        <button id="leftBtn" type="button" aria-label="Move left">◀</button>
+        <button id="rightBtn" type="button" aria-label="Move right">▶</button>
+      </div>
+    </section>
+  </section>
+
+  <section id="resultScreen" class="screen result-screen mmq-card">
+    <div class="result-burst" aria-hidden="true">
+      <span>★</span><span>✦</span><span>★</span>
+    </div>
+    <img id="resultMascot" class="result-mascot" src="assets/golden_apple.png" alt="" aria-hidden="true">
+    <p id="resultCheer" class="result-cheer">Awesome catching!</p>
+    <h2 id="resultTitle" data-i18n="finished">Game finished!</h2>
+    <p id="resultMessage" class="result-message"></p>
+    <div class="result-grid">
+      <div><span data-i18n="timeSpent">Time</span><strong id="rTime">0 s</strong></div>
+      <div><span data-i18n="correct">Correct</span><strong id="rCorrect">0</strong></div>
+      <div class="result-score-card"><span data-i18n="score">Score</span><strong id="rScore">0</strong></div>
+      <div><span data-i18n="speedRate">Speed rate</span><strong id="rSpeed">0/min</strong></div>
+      <div><span data-i18n="accuracy">Accuracy</span><strong id="rAccuracy">0%</strong></div>
+      <div><span data-i18n="fluency">Fluency</span><strong id="rFluency">0/min</strong></div>
+    </div>
+    <div class="result-actions">
+      <button id="againBtn" class="result-action-btn play-again-btn" type="button">
+        <span class="btn-icon" aria-hidden="true">↻</span>
+        <span data-i18n="again">Play again</span>
+      </button>
+      <a id="resultHome" class="result-action-btn home-btn" href="../../START_HERE_EN_GB.html">
+        <span class="btn-icon" aria-hidden="true">⌂</span>
+        <span data-i18n="home">MMQ! Home</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Static top-level modal: never nested in the game container. -->
+<div id="readyPanel" class="ready-modal hidden" role="dialog" aria-modal="true" aria-labelledby="readyTitle" hidden>
+  <section class="ready-dialog">
+    <div class="ready-pop-art" aria-hidden="true">
+      <img class="popup-apple" src="assets/apple_mascot.png" alt="">
+      <span class="popup-spark">★</span>
+      <img class="popup-basket" src="assets/basket_mascot.png" alt="">
+    </div>
+    <div class="ready-content">
+      <span class="ready-badge" data-i18n="almostReady">ALMOST READY!</span>
+      <h2 id="readyTitle" data-i18n="adjustTitle">Adjust your play screen</h2>
+      <p data-i18n="adjustHelp">Make sure you can clearly see the question, falling apples and basket.</p>
+      <div class="fit-checks" aria-label="Screen check">
+        <div><span class="fit-icon">1</span><strong data-i18n="fitOne">Question</strong></div>
+        <div><span class="fit-icon">2</span><strong data-i18n="fitTwo">Apples</strong></div>
+        <div><span class="fit-icon">3</span><strong data-i18n="fitThree">Basket</strong></div>
+      </div>
+      <div class="ready-tip">
+        <img src="assets/timer.png" alt="">
+        <span data-i18n="timerWaits">The timer and apples start only after you press START GAME.</span>
+      </div>
+      <button id="playStartBtn" class="play-start-btn" type="button">
+        <span class="play-icon" aria-hidden="true">▶</span>
+        <span data-i18n="startGame">START GAME</span>
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="../../shared/mmq-math.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

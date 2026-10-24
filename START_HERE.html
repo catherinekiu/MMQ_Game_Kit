@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MMQ! • Choose Language</title>
+  <link rel="stylesheet" href="shared/mmq-shell.css">
+  <style>
+    body{min-height:100vh;background:radial-gradient(circle at 15% 10%,#fff3bd 0 13%,transparent 14%),radial-gradient(circle at 90% 6%,#d9f5ef 0 14%,transparent 15%),linear-gradient(135deg,#f8fbff,#eef6ff 52%,#f7f1ff);display:grid;place-items:center;padding:22px}
+    .portal{width:min(980px,100%)}
+    .hero{padding:34px;text-align:center;position:relative;overflow:hidden}
+    .hero::after{content:"×  ✦  ×  ✦";position:absolute;right:24px;top:16px;font-size:30px;color:#a9c8ed;letter-spacing:8px;transform:rotate(5deg)}
+    .logo{width:90px;height:90px;border-radius:26px;margin:0 auto 14px;display:grid;place-items:center;background:linear-gradient(145deg,#5b90e7,#7e79d8);color:#fff;font-size:42px;font-weight:900;box-shadow:0 13px 28px rgba(62,87,145,.22)}
+    h1{font-size:clamp(2rem,5vw,3.7rem);margin:0;line-height:1.05;color:#243b68}.sub{font-size:1.12rem;line-height:1.6;margin:14px auto 0;max-width:720px}
+    .languages{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .language{padding:25px;text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:transform .15s ease,border-color .15s ease}.language:hover{transform:translateY(-3px);border-color:#b6cce7}.icon{font-size:44px}.language h2{font-size:1.65rem;margin:8px 0}.language p{margin:0 0 18px;color:#65728d;line-height:1.5}.note{margin-top:18px;padding:14px 18px;text-align:center;font-weight:800;color:#75531f;background:#fff8dc;border:2px solid #ffe6a0;border-radius:18px}
+    @media(max-width:680px){.languages{grid-template-columns:1fr}.hero{padding:28px 20px}.hero::after{display:none}}
+  </style>
+
+<style id="year3-typography">
+  h1{font-size:clamp(42px,5vw,56px);font-weight:800;line-height:1.12}
+  .sub{font-size:19px;font-weight:600;line-height:1.55}
+  .language h2{font-size:27px;font-weight:800;line-height:1.3}
+  .language p{font-size:18px;font-weight:600;line-height:1.55}
+  .language[lang^="zh"]{font-family:var(--mmq-font-zh)}
+  .language[lang^="zh"] h2{font-weight:700}
+  .language[lang^="zh"] p{font-weight:500;line-height:1.7}
+  .note{font-size:17px;font-weight:700;line-height:1.5}
+  @media(max-width:680px){h1{font-size:38px}.sub{font-size:17px}.language h2{font-size:24px}.language p{font-size:17px}}
+</style>
+</head>
+<body>
+  <main class="portal">
+    <section class="hero mmq-card">
+      <div class="logo" aria-hidden="true">×</div>
+      <span class="mmq-pill">MathArcade</span>
+      <h1>Multiplication Quest! <span aria-hidden="true">✨</span></h1>
+      <p class="sub mmq-muted">Choose a language, then follow the five learning stages from understanding multiplication to fluent recall.</p>
+      <div class="languages" aria-label="Choose language">
+        <a class="language mmq-card" href="START_HERE_EN_GB.html">
+          <div class="icon" aria-hidden="true">🔵</div><h2>English (UK)</h2><p>Open the pupil-friendly English game path.</p><span class="mmq-btn">Start in English →</span>
+        </a>
+        <a class="language mmq-card" href="START_HERE_ZH_CN.html" lang="zh-Hans">
+          <div class="icon" aria-hidden="true">🟣</div><h2>简体中文</h2><p>打开适合小学生使用的中文游戏学习路径。</p><span class="mmq-btn purple">进入中文版 →</span>
+        </a>
+      </div>
+    </section>
+    <div class="note">📦 Extract the whole folder before opening this file. / 请先解压整个文件夹。</div>
+  </main>
+</body>
+</html>

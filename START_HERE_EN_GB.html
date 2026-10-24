@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MMQ! • English Game Path</title>
+  <link rel="stylesheet" href="shared/mmq-shell.css">
+  <style>
+    body{min-height:100vh;background:linear-gradient(#eef7ff,#f8fbff 45%,#fffaf0);padding:20px}
+    .wrap{width:min(1120px,100%);margin:auto}.hero{padding:25px;margin-bottom:18px;background:linear-gradient(120deg,#fff,#f3f9ff)}
+    h1{margin:0;color:#243b68;font-size:clamp(2rem,4vw,3.4rem)}.hero p{margin:8px 0 0;line-height:1.5}
+    .path{display:grid;gap:16px}.stage{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:19px;align-items:start}.num{width:62px;height:62px;border-radius:20px;display:grid;place-items:center;color:#fff;font-size:26px;font-weight:900;background:#4d83df;box-shadow:0 9px 20px rgba(77,131,223,.22)}.stage:nth-child(2) .num{background:#4ab7a5}.stage:nth-child(3) .num{background:#ed9a45}.stage:nth-child(4) .num{background:#8978d4}.stage:nth-child(5) .num{background:#e8685a}
+    .stage h2{margin:2px 0 5px;font-size:1.35rem}.stage-intro{margin:0 0 14px;color:#65728d}.games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.game-card{padding:15px;border:2px solid #e1eaf4;border-radius:19px;background:#fff}.game-card.full{grid-column:1/-1}.game-top{display:flex;gap:12px;align-items:center}.game-thumb{width:76px;height:76px;object-fit:contain;flex:0 0 auto;filter:drop-shadow(0 5px 8px rgba(39,53,83,.12))}.game-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:#f0f6ff;font-size:27px}.game-card h3{margin:0 0 3px}.game-card p{margin:0;color:#65728d;line-height:1.4}.actions{margin-top:13px;display:flex;gap:8px;flex-wrap:wrap}.actions .mmq-btn{min-height:46px;padding:10px 16px}.song video{width:100%;margin-top:12px;border-radius:16px;background:#1c2a46;max-height:360px}.teacher{margin-top:18px;padding:16px 20px}.teacher summary{cursor:pointer;font-weight:900;color:#28416f}.teacher ul{line-height:1.8;margin-bottom:0}.teacher a{color:#3267c0}
+    @media(max-width:760px){.stage{grid-template-columns:1fr}.num{width:54px;height:54px}.games{grid-template-columns:1fr}.game-card.full{grid-column:auto}}
+  </style>
+
+<style id="year3-typography">
+  h1{font-size:clamp(42px,4.5vw,54px);font-weight:800;line-height:1.15}
+  .hero p{font-size:19px;font-weight:600;line-height:1.55}
+  .stage h2{font-size:28px;font-weight:800;line-height:1.25}
+  .stage-intro{font-size:18px;font-weight:600;line-height:1.5}
+  .game-card h3{font-size:22px;font-weight:800;line-height:1.3}
+  .game-card p{font-size:17px;font-weight:600;line-height:1.5}
+  .num{font-size:28px;font-weight:800}
+  .teacher{font-size:17px}
+  .teacher summary{font-size:18px;font-weight:800}
+  @media(max-width:760px){h1{font-size:38px}.hero p{font-size:17px}.stage h2{font-size:25px}.stage-intro{font-size:17px}.game-card h3{font-size:20px}.game-card p{font-size:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="mmq-topnav"><a class="mmq-home" href="START_HERE.html">← Language menu</a><a class="mmq-home" href="START_HERE_ZH_CN.html">简体中文</a></div>
+  <section class="hero mmq-card"><span class="mmq-pill">MMQ! Learning Path</span><h1>Multiply. Understand. Practise. Become fluent. ⭐</h1><p class="mmq-muted">Follow the stages in order. Each screen uses large tap targets and works offline after the folder is extracted.</p></section>
+  <div class="path">
+    <section class="stage mmq-card"><div class="num">1</div><div><h2>Motivation</h2><p class="stage-intro">Warm up and get ready to multiply.</p><div class="games"><article class="game-card full song"><div class="game-top"><div class="game-icon">🎵</div><div><h3>Introduction Song</h3><p>A short start-up activity before the games.</p></div></div><div class="actions"><a class="mmq-btn orange" href="media/introduction-song.mp4">▶ Play song</a></div><video controls preload="metadata" src="media/introduction-song.mp4"></video></article></div></div></section>
+    <section class="stage mmq-card"><div class="num">2</div><div><h2>Cognitive Support</h2><p class="stage-intro">See multiplication as rows, equal groups and arrays.</p><div class="games"><article class="game-card"><div class="game-top"><img class="game-thumb" src="games/array-model/assets/mission_badge.png" alt=""><div><h3>Array Model</h3><p>Learn arrays, then build Array City by answering 10 concept questions correctly.</p></div></div><div class="actions"><a class="mmq-btn" href="games/array-model/index.html?lang=en">Play Array Mission</a></div></article><article class="game-card"><div class="game-top"><img class="game-thumb" src="games/chair-arrangement/assets/mission_badge.png" alt=""><div><h3>Chair Arrangement</h3><p>Build chair arrays and complete 10 correct classroom arrangements.</p></div></div><div class="actions"><a class="mmq-btn green" href="games/chair-arrangement/index.html?lang=en">Play Classroom Mission</a></div></article></div></div></section>
+    <section class="stage mmq-card"><div class="num">3</div><div><h2>Procedural Practice</h2><p class="stage-intro">Practise facts without a time limit.</p><div class="games"><article class="game-card"><div class="game-top"><div class="game-icon">🎈</div><div><h3>Popubbles! • Untimed</h3><p>Pop the correct answer and build accuracy.</p></div></div><div class="actions"><a class="mmq-btn orange" href="games/popubbles/index.html?lang=en&amp;mode=untimed&amp;slot=procedural&amp;lockTiming=1">Play Untimed</a></div></article><article class="game-card"><div class="game-top"><div class="game-icon">🍎</div><div><h3>Catch Me! • Untimed</h3><p>Move the basket and catch the correct answer.</p></div></div><div class="actions"><a class="mmq-btn green" href="games/catch-me/index.html?lang=en&amp;timing=untimed&amp;slot=procedural&amp;lockTiming=1">Play Untimed</a></div></article></div></div></section>
+    <section class="stage mmq-card"><div class="num">4</div><div><h2>Fluency Reinforcement</h2><p class="stage-intro">Use repeated retrieval in a friendly two-player challenge.</p><div class="games"><article class="game-card full"><div class="game-top"><div class="game-icon">🎯</div><div><h3>Multiplication Board</h3><p>Take turns, answer quickly and complete three lines.</p></div></div><div class="actions"><a class="mmq-btn purple" href="games/multiplication-board/menu.html?lang=en-GB">Play Board Game</a></div></article></div></div></section>
+    <section class="stage mmq-card"><div class="num">5</div><div><h2>Fluency Competency</h2><p class="stage-intro">A fixed 60-second challenge for quick recall.</p><div class="games"><article class="game-card"><div class="game-top"><div class="game-icon">⏱️🎈</div><div><h3>Popubbles! • Timed</h3><p>One minute. Keep accuracy high while responding quickly.</p></div></div><div class="actions"><a class="mmq-btn coral" href="games/popubbles/index.html?lang=en&amp;mode=timed&amp;slot=competency&amp;lockTiming=1">Start 60 s</a></div></article><article class="game-card"><div class="game-top"><div class="game-icon">⏱️🍎</div><div><h3>Catch Me! • Timed</h3><p>One minute of moving, catching and multiplying.</p></div></div><div class="actions"><a class="mmq-btn coral" href="games/catch-me/index.html?lang=en&amp;timing=timed&amp;slot=competency&amp;lockTiming=1">Start 60 s</a></div></article></div></div></section>
+  </div>
+  <details class="teacher mmq-card"><summary>Teacher shortcuts and direct links</summary><ul><li><a href="games/array-model/index.html?lang=en">Array Model</a></li><li><a href="games/chair-arrangement/index.html?lang=en">Chair Arrangement</a></li><li><a href="games/popubbles/index.html?lang=en&amp;mode=untimed&amp;slot=procedural&amp;lockTiming=1">Popubbles Untimed</a></li><li><a href="games/catch-me/index.html?lang=en&amp;timing=untimed&amp;slot=procedural&amp;lockTiming=1">Catch Me Untimed</a></li><li><a href="games/multiplication-board/menu.html?lang=en-GB">Multiplication Board</a></li><li><a href="games/popubbles/index.html?lang=en&amp;mode=timed&amp;slot=competency&amp;lockTiming=1">Popubbles Timed</a></li><li><a href="games/catch-me/index.html?lang=en&amp;timing=timed&amp;slot=competency&amp;lockTiming=1">Catch Me Timed</a></li></ul></details>
+</main>
+</body></html>

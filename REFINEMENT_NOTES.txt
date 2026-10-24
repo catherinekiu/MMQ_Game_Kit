@@ -1,0 +1,22 @@
+MMQ! Year 3 Game Kit — Refinement v2
+
+Popubbles refinement
+- Replaced static/bobbing answer layout with true upward-floating answer bubbles.
+- Speed selection now changes actual vertical movement:
+  Slow = 44 px/s, Medium = 68 px/s, Fast = 98 px/s.
+- Each bubble has a slight independent sway so the game feels alive without becoming visually distracting.
+- All four answer bubbles begin visible within the play field.
+- Bubbles that leave the top wrap back from the bottom; this does NOT count as a wrong mathematical response.
+- A pupil's first tap remains the scored response for the multiplication item.
+- Correct choice: correct bubble + burst feedback.
+- Incorrect choice: selected wrong bubble + correct-answer reveal.
+- Added an in-game speed HUD showing the chosen speed and icon.
+- Clarified the result metric label from “Speed rate” to “Response rate” to avoid confusion with bubble motion speed.
+- Preserved bilingual English / Simplified Chinese support, single-table and Mixed ×3 modes, timed/untimed modes, 20-attempt practice flow, and fluency metrics.
+
+Catch Me
+- Retained the refined three-lane catch mechanism from the previous version.
+- Revalidated JavaScript syntax and local asset references.
+
+Design principle
+- Movement difficulty is separated from mathematical accuracy wherever possible. Popubbles do not become incorrect merely because they travel off-screen; they recycle until the pupil makes a response.
